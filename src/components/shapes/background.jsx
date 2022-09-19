@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Stars from "./stars/Stars";
 
 function Donut() {
   const scene = new THREE.Scene();
@@ -52,8 +51,25 @@ function Donut() {
 
   scene.add(lightHelper, gridHelper);
 
+  /// Moon Instantiaion
+  const moonTexture = new THREE.TextureLoader().load("../src/assets/moon.jpg");
+
+  const moon = new THREE.Mesh(
+    new THREE.SphereGeometry(3, 32, 32),
+    new THREE.MeshStandardMaterial({
+      map: moonTexture,
+    })
+  );
+
+  scene.add(moon);
+
   // Controls for movement
   const controls = new OrbitControls(camera, renderer.domElement);
+
+  const spaceTexture = new THREE.TextureLoader().load(
+    "../src/assets/space.jpg"
+  );
+  scene.background = spaceTexture;
 
   // Animation for donut
   function animate() {
@@ -75,7 +91,6 @@ function Donut() {
   return (
     <div>
       {renderer.render(scene, camera)} {animate()}
-      <Stars />
     </div>
   );
 }

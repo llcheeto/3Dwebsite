@@ -1,10 +1,10 @@
 import "./App.css";
-import Donut from "./components/shapes/donut";
+import Background from "./components/shapes/background";
 
 function App() {
   return (
     <div>
-      <Donut />
+      <Background />
     </div>
   );
 }
