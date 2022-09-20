@@ -2,7 +2,14 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 function Donut() {
+  // Scene and background
   const scene = new THREE.Scene();
+
+  const spaceTexture = new THREE.TextureLoader().load(
+    "../src/assets/space.jpg"
+  );
+  scene.background = spaceTexture;
+
   const gemoetry = new THREE.TorusGeometry(10, 3, 15, 100);
   const material = new THREE.MeshStandardMaterial({
     color: 0xff6347,
@@ -21,6 +28,8 @@ function Donut() {
     1000
   );
 
+  /// Stars
+
   function addStar() {
     const geometry = new THREE.SphereGeometry(0.25, 24, 24);
     const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
@@ -37,8 +46,9 @@ function Donut() {
 
   // Donut instantiation
   const torus = new THREE.Mesh(gemoetry, material);
-
   scene.add(torus);
+
+  // Lights
 
   const pointLight = new THREE.PointLight(0xffffff);
   pointLight.position.set(20, 20, 20);
@@ -46,36 +56,32 @@ function Donut() {
 
   scene.add(ambientLight, pointLight);
 
-  const lightHelper = new THREE.PointLightHelper(pointLight);
-  const gridHelper = new THREE.GridHelper(200, 50);
-
-  scene.add(lightHelper, gridHelper);
-
   /// Moon Instantiaion
   const moonTexture = new THREE.TextureLoader().load("../src/assets/moon.jpg");
+  const normalTexture = new THREE.TextureLoader().load(
+    "../src/assets/normal.jpg"
+  );
 
   const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3, 32, 32),
     new THREE.MeshStandardMaterial({
       map: moonTexture,
+      normalMap: normalTexture,
     })
   );
-
   scene.add(moon);
+
+  moon.position.z = 30;
+  moon.position.setX(-25);
 
   // Controls for movement
   const controls = new OrbitControls(camera, renderer.domElement);
-
-  const spaceTexture = new THREE.TextureLoader().load(
-    "../src/assets/space.jpg"
-  );
-  scene.background = spaceTexture;
 
   // Animation for donut
   function animate() {
     requestAnimationFrame(animate);
 
-    torus.rotation.x += 0.01;
+    torus.rotation.x += 0.001;
     torus.rotation.y += 0.005;
     torus.rotation.z += 0.01;
 
@@ -86,7 +92,22 @@ function Donut() {
 
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.position.setZ(30);
+  camera.position.setZ(10);
+
+  // Scroll function
+
+  function moveCamera() {
+    const t = document.body.getBoundingClientRect().top;
+    moon.rotation.x += 0.05;
+    moon.rotation.y += 0.075;
+    moon.rotation.z += 0.05;
+
+    camera.position.z = t * -0.01;
+    camera.position.x = t * -0.000002;
+    camera.rotation.y = t * -0.000002;
+  }
+
+  document.body.onscroll = moveCamera;
 
   return (
     <div>
