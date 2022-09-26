@@ -8,10 +8,25 @@
   padding-bottom: 45px;
 }
 
+a {
+  color: inherit;
+}
+
+#linkedin {
+  padding: 10px;
+  overflow: hidden;
+}
+#github {
+  padding: 10px;
+  overflow: hidden;
+}
+
 .contact--card {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px;
+  overflow: hidden;
 }
 
 .left {

@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import { Person, Mail } from "@mui/icons-material";
+import { Person, Mail, Face, LinkedIn, GitHub } from "@mui/icons-material";
 
 import "./body.css";
 
@@ -28,6 +28,17 @@ export default function Body() {
         <header>
           <h1>Brian Cornine</h1>
           <p>Web developer</p>
+          <div className="social--links">
+            <a
+              id="linkedin"
+              href="https://www.linkedin.com/in/brian-cornine-40947a6b/"
+            >
+              <LinkedIn className="icon" fontSize="largest" />
+            </a>
+            <a id="github" href="https://github.com/llcheeto">
+              <GitHub className="icon" fontSize="largest" />
+            </a>
+          </div>
         </header>
 
         <blockquote>
@@ -35,35 +46,17 @@ export default function Body() {
         </blockquote>
 
         <section>
-          <h2>📜 Manifesto</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <h2>
+            <Face className="icon" fontSize="medium" /> Bio
+          </h2>
+          <p></p>
+
+          <p>Hey there!</p>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            I'm a self taught developer with over 2 years experience in
+            Front-End/Full-Stack using technologies such as Javascript, Java and
+            React to create amazing applications, interfaces and so much more.
           </p>
         </section>
 
@@ -160,8 +153,6 @@ export default function Body() {
             </Button>
           </form>
         </section>
-
-        <blockquote></blockquote>
       </main>
     </div>
   );
