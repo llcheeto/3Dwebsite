@@ -20,6 +20,10 @@ a {
   padding: 10px;
   overflow: hidden;
 }
+#resume {
+  padding: 10px;
+  overflow: hidden;
+}
 
 .contact--card {
   display: flex;

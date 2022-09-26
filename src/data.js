@@ -1,20 +1,20 @@
 export const featuredPortfolio = [
-  {
-    id: 1,
-    title: "Social Media App",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-  },
+  // {
+  //   id: 1,
+  //   title: "Social Media App",
+  //   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
+  // },
   {
     id: 2,
     title: "Locksmith Services",
     img: "./src/assets/locksvcsj.png",
     link: "http://locksvcsj.com/",
   },
-  {
-    id: 3,
-    title: "UI Design Testing",
-    img: "https://cdn.dribbble.com/users/702789/screenshots/15054318/media/4ea5d492b7b07eebc9528ff960794879.png?compress=1&resize=1200x900",
-  },
+  // {
+  //   id: 3,
+  //   title: "UI Design Testing",
+  //   img: "https://cdn.dribbble.com/users/702789/screenshots/15054318/media/4ea5d492b7b07eebc9528ff960794879.png?compress=1&resize=1200x900",
+  // },
 ];
 
 export const webPortfolio = [

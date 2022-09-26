@@ -8,6 +8,7 @@ import {
   LinkedIn,
   GitHub,
   AlignVerticalCenter,
+  // Article,
 } from "@mui/icons-material";
 import { featuredPortfolio, webPortfolio } from "/src/data.js";
 import "./body.css";
@@ -24,10 +25,10 @@ export default function Body() {
       id: "featured",
       title: "featured",
     },
-    {
-      id: "web",
-      title: "web",
-    },
+    // {
+    //   id: "web",
+    //   title: "web",
+    // },
   ];
 
   useEffect(() => {
@@ -76,6 +77,9 @@ export default function Body() {
             <a id="github" href="https://github.com/llcheeto">
               <GitHub className="icon" fontSize="largest" />
             </a>
+            {/* <a id="resume" href={Pdf}>
+              <Article className="icon" fontSize="largest" />
+            </a> */}
           </div>
         </header>
 
