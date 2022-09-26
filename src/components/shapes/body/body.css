@@ -37,3 +37,39 @@ a {
   color: white;
   font-size: 300px;
 }
+
+.item {
+  width: 220px;
+  height: 150px;
+  border-radius: 20px;
+  border: 1px solid lightgrey;
+  margin: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container--projects {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 60%;
+  height: 50%;
+  object-fit: cover;
+  z-index: 1;
+}

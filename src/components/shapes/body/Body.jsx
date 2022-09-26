@@ -1,11 +1,48 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import { Person, Mail, Face, LinkedIn, GitHub } from "@mui/icons-material";
-
+import {
+  Person,
+  Mail,
+  Face,
+  LinkedIn,
+  GitHub,
+  AlignVerticalCenter,
+} from "@mui/icons-material";
+import { featuredPortfolio, webPortfolio } from "/src/data.js";
 import "./body.css";
+import { useEffect, useState } from "react";
+import PortfolioList from "../../portfolioList/PortfolioList";
 
 export default function Body() {
+  const [selected, setSelected] = useState("featured");
+  const [data, setData] = useState([]);
+
+  const list = [
+    {
+      id: "featured",
+      title: "featured",
+    },
+    {
+      id: "web",
+      title: "web",
+    },
+  ];
+
+  useEffect(() => {
+    switch (selected) {
+      case "featured":
+        setData(featuredPortfolio);
+        break;
+      case "web":
+        setData(webPortfolio);
+        break;
+      default:
+        setData(featuredPortfolio);
+    }
+  }, [selected]);
+
+  // Email Handler
   const emailHandler = (e) => {
     e.preventDefault();
     document
@@ -60,30 +97,31 @@ export default function Body() {
           </p>
         </section>
 
+        {/* Projects */}
         <section className="light">
-          <h2>👩🏽‍🚀 Projects</h2>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <h2>🏆 Accomplishments</h2>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <h2>
+            <AlignVerticalCenter className="icon" fontSize="large" /> Projects
+          </h2>
+          <div className="portfolio" id="portfolio">
+            <ul>
+              {list.map((item) => (
+                <PortfolioList
+                  title={item.title}
+                  active={selected === item.id}
+                  setSelected={setSelected}
+                  id={item.id}
+                />
+              ))}
+            </ul>
+            <div className="container--projects">
+              {data.map((d) => (
+                <div className="item">
+                  <h3>{d.title}</h3>
+                  <img src={d.img} alt="" />
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         <blockquote>

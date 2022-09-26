@@ -1,0 +1,16 @@
+.portfolioList {
+  margin-right: 50px;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline;
+}
+
+.active {
+  background-color: white;
+  color: rgb(0, 68, 255);
+}
+.portfolioList:hover {
+  background-color: white;
+  color: rgb(0, 68, 255);
+}
