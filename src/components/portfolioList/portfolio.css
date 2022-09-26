@@ -8,9 +8,9 @@
 
 .active {
   background-color: white;
-  color: rgb(0, 68, 255);
+  color: #1565c0;
 }
 .portfolioList:hover {
   background-color: white;
-  color: rgb(0, 68, 255);
+  color: #1565c0;
 }

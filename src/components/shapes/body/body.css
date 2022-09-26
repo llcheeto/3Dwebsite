@@ -42,7 +42,7 @@ a {
   width: 220px;
   height: 150px;
   border-radius: 20px;
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
   margin: 10px 20px;
   display: flex;
   align-items: center;
@@ -68,8 +68,14 @@ a {
 }
 
 img {
-  width: 60%;
+  width: 25%;
   height: 50%;
   object-fit: cover;
   z-index: 1;
+  border: 2px solid lightgray;
+}
+.item:hover {
+  background-color: #1565c0;
+  opacity: 0.9;
+  z-index: 2;
 }

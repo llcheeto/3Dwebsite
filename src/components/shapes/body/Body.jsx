@@ -11,12 +11,13 @@ import {
 } from "@mui/icons-material";
 import { featuredPortfolio, webPortfolio } from "/src/data.js";
 import "./body.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import PortfolioList from "../../portfolioList/PortfolioList";
 
 export default function Body() {
   const [selected, setSelected] = useState("featured");
   const [data, setData] = useState([]);
+  const refForm = useRef();
 
   const list = [
     {
@@ -45,18 +46,18 @@ export default function Body() {
   // Email Handler
   const emailHandler = (e) => {
     e.preventDefault();
-    document
-      .getElementById("contact--form")
-      .addEventListener("submit", function () {
-        emailjs.sendForm("service_w4ua2hh", "template_q5ylkf7", this).then(
-          function () {
-            alert("SUCCESS! I'll respond as soon as I can");
-          },
-          function (error) {
-            console.log("FAILED...", error);
-          }
-        );
-      });
+
+    emailjs
+      .sendForm("service_w4ua2hh", "template_q5ylkf7", refForm.current)
+      .then(
+        function () {
+          alert("SUCCESS! I'll respond as soon as I can");
+          window.location.reload(false);
+        },
+        function (error) {
+          alert("FAILED...", error);
+        }
+      );
   };
 
   return (
@@ -116,7 +117,9 @@ export default function Body() {
             <div className="container--projects">
               {data.map((d) => (
                 <div className="item">
-                  <h3>{d.title}</h3>
+                  <a href={d.link}>
+                    <h3>{d.title}</h3>
+                  </a>
                   <img src={d.img} alt="" />
                 </div>
               ))}
@@ -139,7 +142,6 @@ export default function Body() {
             <hr />
 
             <p>
-              {" "}
               <Mail className="icon" /> briancornine@gmail.com
             </p>
 
@@ -148,7 +150,7 @@ export default function Body() {
             </p>
           </div>
           <input type="hidden" name="contact_number"></input>
-          <form id="contact--form" onSubmit={emailHandler}>
+          <form id="contact--form" ref={refForm} onSubmit={emailHandler}>
             <div className="inputs">
               <TextField
                 InputLabelProps={{
