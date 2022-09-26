@@ -1,11 +1,11 @@
 #contact--form {
   display: grid;
   margin: 50px;
-  padding: 25px;
+  padding: 23px;
 }
 
 #contact--header {
-  padding-bottom: 110px;
+  padding-bottom: 45px;
 }
 
 .contact--card {

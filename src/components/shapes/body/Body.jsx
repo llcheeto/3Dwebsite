@@ -1,8 +1,8 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import faphone from "@fortawesome/free-solid-svg-icons";
+import { Person, Mail } from "@mui/icons-material";
+
 import "./body.css";
 
 export default function Body() {
@@ -104,10 +104,16 @@ export default function Body() {
           <div>
             <h2 id="contact--header">Lets get connected!</h2>
 
-            <p> briancornine@gmail.com</p>
+            <h5> Contact Info</h5>
+            <hr />
+
             <p>
-              <FontAwesomeIcon icon="fa-sharp fa-solid fa-phone" /> (863)
-              214-7285
+              {" "}
+              <Mail className="icon" /> briancornine@gmail.com
+            </p>
+
+            <p>
+              <Person className="icon" /> (863) 214-7285
             </p>
           </div>
           <input type="hidden" name="contact_number"></input>
