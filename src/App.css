@@ -44,6 +44,7 @@ canvas {
 }
 
 header {
+  border-radius: 30px;
   background: var(--dark-bg);
   grid-column: 2 / span 5;
   font-size: 2.5rem;
@@ -52,6 +53,7 @@ header {
 }
 
 section {
+  border-radius: 30px;
   grid-column: 2 / 8;
   padding: 1rem;
   background: var(--dark-bg);
@@ -61,10 +63,12 @@ section {
 }
 
 blockquote {
+  border-radius: 30px;
   margin: 0;
   padding: 0;
   grid-column: 2 / span 9;
   margin-bottom: var(--spacing);
+  opacity: 0.9;
 }
 
 blockquote p {
@@ -73,8 +77,4 @@ blockquote p {
   font-size: 4rem;
   display: inline;
   line-height: 1;
-}
-
-.left {
-  grid-column: 6 / 12;
 }

@@ -1,0 +1,24 @@
+#contact--form {
+  display: grid;
+  margin: 50px;
+  padding: 25px;
+}
+
+#contact--header {
+  padding-bottom: 110px;
+}
+
+.contact--card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  grid-column: 6 / 12;
+}
+
+.username {
+  color: white;
+  font-size: 300px;
+}
