@@ -1,12 +1,13 @@
 {
-  "name": "3dportfolio",
+  "name": "brianc9",
+  "homepage": "http://brianc9.com/",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "npm run build && vite preview"
   },
   "dependencies": {
     "3": "^2.1.0",

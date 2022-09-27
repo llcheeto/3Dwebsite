@@ -1,13 +1,12 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import background from "C:/Users/llcheeto/Documents/GitHub/3DPortfolio/3dportfolio/public/blackscreen.jpg";
 
 function Donut() {
   // Scene and background
   const scene = new THREE.Scene();
 
-  const spaceTexture = new THREE.TextureLoader().load(
-    "../src/assets/blackscreen.jpg"
-  );
+  const spaceTexture = new THREE.TextureLoader().load(background);
   scene.background = spaceTexture;
 
   const gemoetry = new THREE.TorusGeometry(10, 3, 20, 100);

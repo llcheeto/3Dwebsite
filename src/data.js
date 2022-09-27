@@ -1,13 +1,16 @@
+import lockImg from "C:/Users/llcheeto/Documents/GitHub/3DPortfolio/3dportfolio/public/locksvcsj.png";
+
 export const featuredPortfolio = [
-  // {
-  //   id: 1,
-  //   title: "Social Media App",
-  //   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
-  // },
+  {
+    id: 1,
+    title: "Youtube MP3 Converter",
+    img: "https://user-images.githubusercontent.com/89275143/179866226-6135ca28-21ee-49dd-b2c4-e11711a4f882.png",
+    link: "https://github.com/llcheeto/converter",
+  },
   {
     id: 2,
     title: "Locksmith Services",
-    img: "./src/assets/locksvcsj.png",
+    img: lockImg,
     link: "http://locksvcsj.com/",
   },
   // {

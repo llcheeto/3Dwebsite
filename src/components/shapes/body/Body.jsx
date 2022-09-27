@@ -108,25 +108,27 @@ export default function Body() {
             <AlignVerticalCenter className="icon" fontSize="large" /> Projects
           </h2>
           <div className="portfolio" id="portfolio">
-            <ul>
-              {list.map((item) => (
-                <PortfolioList
-                  title={item.title}
-                  active={selected === item.id}
-                  setSelected={setSelected}
-                  id={item.id}
-                />
-              ))}
-            </ul>
-            <div className="container--projects">
-              {data.map((d) => (
-                <div className="item">
-                  <a href={d.link}>
-                    <h3>{d.title}</h3>
-                  </a>
-                  <img src={d.img} alt="" />
-                </div>
-              ))}
+            <div className="portfolio--card">
+              <ul>
+                {list.map((item) => (
+                  <PortfolioList
+                    title={item.title}
+                    active={selected === item.id}
+                    setSelected={setSelected}
+                    id={item.id}
+                  />
+                ))}
+              </ul>
+              <div className="container--projects">
+                {data.map((d) => (
+                  <div className="item">
+                    <a href={d.link}>
+                      <h3>{d.title}</h3>
+                    </a>
+                    <img src={d.img} alt="" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
