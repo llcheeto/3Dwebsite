@@ -104,24 +104,25 @@ export default function Body() {
 
         {/* Projects */}
         <section className="light">
-          <h2>
+          <h2 className="projects--title">
             <AlignVerticalCenter className="icon" fontSize="large" /> Projects
           </h2>
           <div className="portfolio" id="portfolio">
             <div className="portfolio--card">
-              <ul>
+              <ul className="portfolio--title">
                 {list.map((item) => (
                   <PortfolioList
                     title={item.title}
                     active={selected === item.id}
                     setSelected={setSelected}
                     id={item.id}
+                    key={item.id}
                   />
                 ))}
               </ul>
               <div className="container--projects">
                 {data.map((d) => (
-                  <div className="item">
+                  <div className="item" key={d.id}>
                     <a href={d.link}>
                       <h3>{d.title}</h3>
                     </a>
@@ -156,7 +157,12 @@ export default function Body() {
             </p>
           </div>
           <input type="hidden" name="contact_number"></input>
-          <form id="contact--form" ref={refForm} onSubmit={emailHandler}>
+          <form
+            className="contact--form"
+            id="contact--form"
+            ref={refForm}
+            onSubmit={emailHandler}
+          >
             <div className="inputs">
               <TextField
                 InputLabelProps={{
