@@ -10,7 +10,7 @@ import {
   AlignVerticalCenter,
   // Article,
 } from "@mui/icons-material";
-import { featuredPortfolio, webPortfolio } from "/src/data.js";
+import { featuredPortfolio, javaPortfolio } from "/src/data.js";
 import "./body.css";
 import { useEffect, useState, useRef } from "react";
 import PortfolioList from "../../portfolioList/PortfolioList";
@@ -23,12 +23,12 @@ export default function Body() {
   const list = [
     {
       id: "featured",
-      title: "featured",
+      title: "Featured",
     },
-    // {
-    //   id: "web",
-    //   title: "web",
-    // },
+    {
+      id: "java",
+      title: "Java",
+    },
   ];
 
   useEffect(() => {
@@ -36,8 +36,8 @@ export default function Body() {
       case "featured":
         setData(featuredPortfolio);
         break;
-      case "web":
-        setData(webPortfolio);
+      case "java":
+        setData(javaPortfolio);
         break;
       default:
         setData(featuredPortfolio);

@@ -1,5 +1,7 @@
 import lockImg from "C:/Users/llcheeto/Documents/GitHub/3DPortfolio/3dportfolio/public/locksvcsj.png";
 
+import flappyImg from "C:/Users/llcheeto/Documents/GitHub/3DPortfolio/3dportfolio/public/flappyBird.png";
+
 export const featuredPortfolio = [
   {
     id: 1,
@@ -20,20 +22,21 @@ export const featuredPortfolio = [
   // },
 ];
 
-export const webPortfolio = [
+export const javaPortfolio = [
   {
     id: 1,
-    title: "Web Social Media App",
-    img: "https://cdn.dribbble.com/users/5031392/screenshots/15467520/media/c36b3b15b25b1e190d081abdbbf947cf.png?compress=1&resize=1200x900",
+    title: "Flappy Bird",
+    img: flappyImg,
+    link: "https://github.com/llcheeto/FlappyBird/tree/main",
   },
-  {
-    id: 2,
-    title: "Web Rampa UI Design",
-    img: "https://cdn.dribbble.com/users/3967258/screenshots/15463803/media/4fddb9a2caf3b3bd634060f706a91e73.png?compress=1&resize=1200x900",
-  },
-  {
-    id: 3,
-    title: "School Project",
-    img: "https://cdn.dribbble.com/users/3967258/screenshots/15463803/media/4fddb9a2caf3b3bd634060f706a91e73.png?compress=1&resize=1200x900",
-  },
+  // {
+  //   id: 2,
+  //   title: "Web Rampa UI Design",
+  //   img: "https://cdn.dribbble.com/users/3967258/screenshots/15463803/media/4fddb9a2caf3b3bd634060f706a91e73.png?compress=1&resize=1200x900",
+  // },
+  // {
+  //   id: 3,
+  //   title: "School Project",
+  //   img: "https://cdn.dribbble.com/users/3967258/screenshots/15463803/media/4fddb9a2caf3b3bd634060f706a91e73.png?compress=1&resize=1200x900",
+  // },
 ];

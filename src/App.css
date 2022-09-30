@@ -60,6 +60,10 @@ blockquote {
   font-style: normal;
 }
 
+p {
+  font-size: 50px;
+}
+
 canvas {
   position: fixed !important;
   overflow: hidden !important;
