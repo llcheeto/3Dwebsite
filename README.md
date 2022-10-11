@@ -1,4 +1,4 @@
-Finally finished up the first draft of the site, and published it on my domain at http://brianc9.com
+Finally finished up the first draft of the site, and published it on my domain at http://brianc9.com. Thinking of taking some things out and adding new features to showcase projects
 
 
 
